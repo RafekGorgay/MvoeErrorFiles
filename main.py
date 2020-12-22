@@ -17,3 +17,5 @@ def main ()
         pass
     finally:
         pass
+
+    TimeoutError
