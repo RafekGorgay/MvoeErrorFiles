@@ -3,13 +3,12 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
-
 # print the current dir
 print(os.getcwd())
 
 # setting the Original and destination
 original = r'C:\Users\gorraf02\Desktop\Billing'
-target = r'C:\Users\gorraf02\Desktop'
+target = r'C:\Users\gorraf02\Desktop\Billing\test'
 
 # Print how many files are there
 print (len([name for name in os.listdir(os.chdir(original))]))
