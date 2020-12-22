@@ -3,6 +3,13 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
+
+# copying the files to the destination
+def copyFiles (list, destination):
+    for i in list:
+        shutil.copy(i,destination)
+
+        
 # print the current dir
 print(os.getcwd())
 
@@ -17,6 +24,6 @@ print (len([name for name in os.listdir(os.chdir(original))]))
 onlyfiles = [f for f in listdir(original) if isfile(join(original, f))]
 print (onlyfiles)
 
-# copying the files to the destination
-for i in onlyfiles:
-    shutil.copy(i,target)
+copyFiles(onlyfiles, target)
+
+
