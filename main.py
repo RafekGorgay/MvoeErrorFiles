@@ -3,25 +3,39 @@ from os import listdir
 from os.path import isfile, join, isdir
 import shutil
 
-# Function takes the list of files and the destination and copies the list of files int o the destination
-def copyFiles (list, destination):
-    for i in list:
-        shutil.copy(i,destination)
-
 # setting the Original and destination from the user
-
 original = input("Please enter the location of error files : ")
-#target = input("Please enter the location of current billing month : ")
+target = input("Please enter the location of current billing month : ")
 
-# calculate how many folders are there and savinf them in a list
+# identify file list
+filelist = []
+
+# adding folders to a List
 foldersList = [name for name in listdir(original) if isdir(join(original, name))]
+# Calculate the number of folders
 numberOfFolders = len(foldersList)
 
+for i in foldersList:
 
-# adding the files names in a list
-filesList = [f for f in listdir(original) if isfile(join(original, f))]
-numberOfFiles = len(filesList)
+    # go inside each states folder for both destination and source
+    ErrorFilesFolder = original + '\\' + i + "\\" + "Unzip_Error"
+    tagetFolder = target + '\\' + i
+    
+    # Printing the state that is accessed
+    print(i)
 
-
-
-## copyFiles(filesList, target)
+    # Coping the files into the destination
+    try:
+        filesList = [f for f in listdir(ErrorFilesFolder) if isfile(join(ErrorFilesFolder, f))]
+        numberOfFiles = len(filesList)
+        print ("Number of files that will be copied: ",numberOfFiles)
+        
+        # copying all files
+        for i in filesList:
+            shutil.copy(os.path.join(ErrorFilesFolder, i ),tagetFolder)
+    except FileNotFoundError:
+        print("Unzip_Error Folder does not exist")
+    
+    # resetting the filelist and delete the Unzio_Error folder
+    filelist = 0
+    shutil.rmtree(ErrorFilesFolder)
