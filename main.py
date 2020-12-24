@@ -12,6 +12,7 @@ filelist = []
 
 # adding folders to a List
 foldersList = [name for name in listdir(original) if isdir(join(original, name))]
+
 # Calculate the number of folders
 numberOfFolders = len(foldersList)
 
