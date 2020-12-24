@@ -14,14 +14,14 @@ original = input("Please enter the location of error files : ")
 #target = input("Please enter the location of current billing month : ")
 
 # calculate how many folders are there and savinf them in a list
-foldersName = [name for name in listdir(original) if isdir(join(original, name))]
-numberOfFolders = len(foldersName)
+foldersList = [name for name in listdir(original) if isdir(join(original, name))]
+numberOfFolders = len(foldersList)
 
 
 # adding the files names in a list
-onlyfiles = [f for f in listdir(original) if isfile(join(original, f))]
-numberOfFiles = len(onlyfiles)
+filesList = [f for f in listdir(original) if isfile(join(original, f))]
+numberOfFiles = len(filesList)
 
 
 
-## copyFiles(onlyfiles, target)
+## copyFiles(filesList, target)
