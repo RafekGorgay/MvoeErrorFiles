@@ -39,3 +39,5 @@ for i in foldersList:
     # resetting the filelist and delete the Unzio_Error folder
     filelist = 0
     shutil.rmtree(ErrorFilesFolder)
+
+os.system("pause")
