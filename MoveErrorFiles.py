@@ -3,12 +3,11 @@ from os import listdir
 from os.path import isfile, join, isdir
 import shutil
 
-# setting the Original and destination from the user
+filelist = []
+
+# setting the Original and destination locations from the user
 original = input("Please enter the location of error files : ")
 target = input("Please enter the location of current billing month : ")
-
-# identify file list
-filelist = []
 
 # adding folders to a List
 foldersList = [name for name in listdir(original) if isdir(join(original, name))]
