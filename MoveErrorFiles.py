@@ -28,11 +28,12 @@ for i in foldersList:
     try:
         filesList = [f for f in listdir(ErrorFilesFolder) if isfile(join(ErrorFilesFolder, f))]
         numberOfFiles = len(filesList)
-        print ("Number of files that will be copied: ",numberOfFiles)
         
         # copying all files
         for i in filesList:
             shutil.copy(os.path.join(ErrorFilesFolder, i ),tagetFolder)
+        
+        print (numberOfFiles, " are copied")
     except FileNotFoundError:
         print("Unzip_Error Folder does not exist")
     
