@@ -42,3 +42,5 @@ for i in foldersList:
     shutil.rmtree(ErrorFilesFolder)
 
 os.system("pause")
+
+# the file ended
